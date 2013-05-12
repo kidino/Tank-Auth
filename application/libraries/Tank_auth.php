@@ -116,6 +116,9 @@ class Tank_auth
 		$this->ci->session->set_userdata(array('user_id' => '', 'username' => '', 'status' => ''));
 
 		$this->ci->session->sess_destroy();
+		// as of CI2.1.3, recreate session so flashdata will still work
+		$this->session->sess_create();
+
 	}
 
 	/**
